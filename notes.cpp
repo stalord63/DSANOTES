@@ -26,3 +26,52 @@ int main() {
 }
 
 //------------------------------------------------------------------------------------------------
+//Reverse an Array
+#include <bits/stdc++.h>
+using namespace std;
+void reverse(int i,int *arr,int n){
+	if(i>=n/2)
+	{return;}
+	
+	swap(arr[i],arr[n-i-1]);
+	reverse(i+1,arr,n);
+	
+	
+}
+int main() {
+int arr[]={1,2,3,4,5};
+reverse(0,arr,5);
+for(int i=0;i<5;i++){
+	cout<<arr[i];
+}
+	return 0;
+}
+//---------------------------------------------------------------------------------------------------
+// String Palindrome
+#include <bits/stdc++.h>
+using namespace std;
+bool swap(string str,int i,int n){
+if(i>=n/2)
+return true;
+
+
+if(str[i]!=str[n-i-1])
+return false;
+
+ return swap(str,i+1,n);
+
+	
+	
+}
+int main() {
+string str="MADAM";
+int n=str.length();
+if(swap(str,0,n)){
+	cout<<"Palindrome";
+}
+else cout<<"NOT palindrome";
+
+	return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------
